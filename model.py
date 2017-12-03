@@ -131,8 +131,8 @@ def load_data(data_path):
 	return images, measurements
 
 def main():
-	#images, measurements = load_data('./my_data/20171203')
-	images, measurements = load_data('./data')
+	images, measurements = load_data('./my_data/20171203')
+	#images, measurements = load_data('./data')
 
 	X_train = np.array(images)
 	y_train = np.array(measurements)
