@@ -1,3 +1,4 @@
+import os
 import csv
 import cv2
 import numpy as np 
@@ -6,11 +7,11 @@ from keras.models import Sequential
 from keras.layers import Flatten, Dense, MaxPool2D, Conv2D, Dropout, Lambda, Cropping2D
 from keras.callbacks import ModelCheckpoint
 
-def create_lenet_model(input_shape, output_shape, drop_out=1.0):
-	print('creating lenet model ...')
+def create_nvidia_model(input_shape, output_shape, drop_out=1.0):
+	print('creating nvidia model ...')
 	model = Sequential()
 
-	#model.add(Cropping2D(cropping=((60, 20), (0, 0)), input_shape=input_shape))
+	model.add(Cropping2D(cropping=((50, 20), (0, 0)), input_shape=input_shape))
 
 	model.add(Lambda(lambda x: (x / 255.0) - 0.5, input_shape=input_shape))	
 
@@ -56,8 +57,8 @@ def create_lenet_model(input_shape, output_shape, drop_out=1.0):
 def create_vgg_model(input_shape, output_shape):
 	print('creating vgg model ...')
 
-def create_nvidia_model(input_shape, output_shape):
-	print('creating nvidia model ...')
+def create_lenet_model(input_shape, output_shape):
+	print('creating letnet model ...')
 	
 def train_model(model, X_train, y_train, batch_size, split_rate, shuffle, epochs, model_path=None):
 	print('training model ...')
@@ -130,8 +131,8 @@ def load_data(data_path):
 	return images, measurements
 
 def main():
-	images, measurements = load_data('./my_data/20171203')
-	#images, measurements = load_data('./data')
+	#images, measurements = load_data('./my_data/20171203')
+	images, measurements = load_data('./data')
 
 	X_train = np.array(images)
 	y_train = np.array(measurements)
@@ -154,9 +155,10 @@ def main():
 	input_shape = X_train.shape[1:]
 	output_shape = 1
 	print('image shape: ', input_shape)
-	model = create_lenet_model(input_shape, output_shape, 0.5)
+	model = create_nvidia_model(input_shape, output_shape, 0.5)
 	model_path = 'model.h5'
-	model.load_weights(model_path)
+	if os.path.isfile(model_path):
+		model.load_weights(model_path)
 	train_model(model, X_train, y_train, 128, 0.2, True, 20, model_path)
 
 if __name__ == '__main__':
