@@ -117,8 +117,15 @@ from left to center
 ![from left to center 1](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/left2center/IMG/center_2017_12_05_14_24_40_563.jpg)
 ![from left to center 2](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/left2center/IMG/center_2017_12_05_14_24_41_671.jpg)
 ![from left to center 3](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/left2center/IMG/center_2017_12_05_14_24_47_584.jpg)
+![from left to center 4](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/left2center/IMG/center_2017_12_05_14_24_47_815.jpg)
 
 from right to center
+
+![from right to center 1](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/right2center/IMG/center_2017_12_05_14_25_15_142.jpg)
+![from right to center 2](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/right2center/IMG/center_2017_12_05_14_25_20_021.jpg)
+![from right to center 3](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/right2center/IMG/center_2017_12_05_14_25_20_097.jpg)
+![from right to center 4](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/right2center/IMG/center_2017_12_05_14_25_20_538.jpg)
+
 
 Then I repeated this process on track two in order to get more data points.
 
@@ -141,3 +148,7 @@ After the collection process, I had 48216 number of data points. I then preproce
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+
+video result for track1:
+
+video result for track2:
