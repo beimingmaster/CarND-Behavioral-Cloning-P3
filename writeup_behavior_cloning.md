@@ -128,7 +128,7 @@ _________________________________________________________________
 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
-![visual of architecture](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/maste/model.png)
+![visual of architecture](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/model.png)
 
 #### 3. Creation of the Training Set & Training Process
 
@@ -180,4 +180,4 @@ I used this training data for training the model. The validation set helped dete
 
 ![video result for track1](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/run_track_1.mp4)
 
-![video result for track2](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/run_track_2.mp4):
+![video result for track2](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/run_track_2.mp4)
