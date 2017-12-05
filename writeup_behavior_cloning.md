@@ -100,15 +100,44 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
 
+Model Architecture:
+
+_________________________________________________________________
+cropping2d_1 (Cropping2D)    (None, 90, 320, 3)        0         
+_________________________________________________________________
+lambda_1 (Lambda)            (None, 90, 320, 3)        0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 43, 158, 24)       1824      
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 43, 158, 24)       0         
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 20, 77, 36)        21636     
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 20, 77, 36)        0         
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 8, 37, 48)         43248     
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 8, 37, 48)         0         
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 6, 35, 64)         27712     
+_________________________________________________________________
+dropout_4 (Dropout)          (None, 6, 35, 64)         0         
+_________________________________________________________________
+
+
+
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
-![alt text][image1]
+![visual of architecture](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/maste/model.png)
 
 #### 3. Creation of the Training Set & Training Process
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
-![alt text][image2]
+![center drving 1](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/center/IMG/center_2017_12_05_14_45_34_645.jpg)
+![center drving 2](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/center/IMG/center_2017_12_05_14_45_50_842.jpg)
+![center drving 3](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/center/IMG/center_2017_12_05_14_45_54_924.jpg)
+![center drving 4](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/output_images/20171205/center/IMG/center_2017_12_05_14_45_57_916.jpg)
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
 
@@ -149,6 +178,6 @@ I finally randomly shuffled the data set and put 20% of the data into a validati
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
 
-video result for track1:
+![video result for track1](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/run_track_1.mp4)
 
-video result for track2:
+![video result for track2](https://github.com/beimingmaster/CarND-Behavioral-Cloning-P3/blob/master/run_track_2.mp4):

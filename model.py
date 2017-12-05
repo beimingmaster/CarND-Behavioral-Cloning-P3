@@ -6,6 +6,7 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import Flatten, Dense, MaxPool2D, Conv2D, Dropout, Lambda, Cropping2D
 from keras.callbacks import ModelCheckpoint
+from keras.utils import plot_model
 
 def create_nvidia_model(input_shape, output_shape, drop_out=1.0):
 	print('creating nvidia model ...')
@@ -163,6 +164,9 @@ def main():
 	output_shape = 1
 	print('image shape: ', input_shape)
 	model = create_nvidia_model(input_shape, output_shape, 0.5)
+
+	plot_model(model, to_file='model.png', show_shapes=True)
+
 	model_path = 'model.h5'
 	if os.path.isfile(model_path):
 		model.load_weights(model_path)

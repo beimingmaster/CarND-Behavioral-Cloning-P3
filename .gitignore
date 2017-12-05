@@ -1,6 +1,5 @@
 __MACOSX
 data
 my_data
-run_track_*
 *.bak
 *.csv
