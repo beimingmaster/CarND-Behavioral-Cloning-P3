@@ -132,8 +132,8 @@ def load_data(data_path):
 	return images, measurements
 
 def main():
-	#images, measurements = load_data('./my_data/20171203')
-	images, measurements = load_data('./data')
+	images, measurements = load_data('./my_data/20171205/left2center')
+	#images, measurements = load_data('./data')
 
 	X_train = np.array(images)
 	y_train = np.array(measurements)
@@ -151,12 +151,12 @@ def main():
 	X_train = np.vstack((X_train, np.array(aug_x)))
 	y_train = np.hstack((y_train, np.array(aug_y)))
 
-	cv2.imwrite('./output_images/source_100.jpg', X_train[100])
-	cv2.imwrite('./output_images/flip_100.jpg', aug_x[100])
-	cv2.imwrite('./output_images/source_1000.jpg', X_train[1000])
-	cv2.imwrite('./output_images/flip_1000.jpg', aug_x[1000])
-	cv2.imwrite('./output_images/source_10000.jpg', X_train[10000])
-	cv2.imwrite('./output_images/flip_10000.jpg', aug_x[10000])
+	#cv2.imwrite('./output_images/source_100.jpg', X_train[100])
+	#cv2.imwrite('./output_images/flip_100.jpg', aug_x[100])
+	#cv2.imwrite('./output_images/source_1000.jpg', X_train[1000])
+	#cv2.imwrite('./output_images/flip_1000.jpg', aug_x[1000])
+	#cv2.imwrite('./output_images/source_10000.jpg', X_train[10000])
+	#cv2.imwrite('./output_images/flip_10000.jpg', aug_x[10000])
 
 	print('mean: %.3f, min: %.3f, max: %.3f' % (np.mean(y_train), np.min(y_train), np.max(y_train)))
 	print('size of X_train: %d, size of y_train: %d' % (len(X_train), len(y_train)))
@@ -165,12 +165,12 @@ def main():
 	print('image shape: ', input_shape)
 	model = create_nvidia_model(input_shape, output_shape, 0.5)
 
-	plot_model(model, to_file='model.png', show_shapes=True)
+	#plot_model(model, to_file='model.png', show_shapes=True)
 
 	model_path = 'model.h5'
 	if os.path.isfile(model_path):
 		model.load_weights(model_path)
-	#train_model(model, X_train, y_train, 128, 0.2, True, 20, model_path)
+	train_model(model, X_train, y_train, 128, 0.2, True, 20, model_path)
 
 if __name__ == '__main__':
 	main()

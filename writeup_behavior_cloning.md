@@ -98,6 +98,9 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 #### 2. Final Model Architecture
 
+Our convolutionlal neural network architecture was inspired by NVIDIA's End to End Learning for Self-Driving Cars paper.
+The main difference between our model and the NVIDIA model is than we did use Dropout layers just after each Convolutional Layer in order to avoid overfitting.
+
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
 
 Model Architecture:
